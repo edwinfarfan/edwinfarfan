@@ -1,0 +1,38 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "pe.com.cd",
+            "nativeLanguage": "en"
+        },
+        "jhipsterVersion": "5.8.1",
+        "applicationType": "monolith",
+        "baseName": "cambistaDigital",
+        "packageName": "pe.com.cd",
+        "packageFolder": "pe/com/cd",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "mysql",
+        "prodDatabaseType": "mysql",
+        "searchEngine": "elasticsearch",
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": true,
+        "jwtSecretKey": "ODVkZTNlYzUzMWQ2OWNjNTZlYTczMWY1NTcyMzdjNDQ3ZDhkODkyMDRkOTYwNTgwOWZlMjZhMDlkZjFlODc3NDAyM2RkMWM2YjY1YWVkMDNlMmMzZDMxMWU1Mjc3YmViZWU5MzJhNGFmZjZiYmE3NDBmMWYxZDRmY2FlNzJiZTY=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": ["gatling", "cucumber", "protractor"],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "en",
+        "languages": ["en", "es"]
+    }
+}
