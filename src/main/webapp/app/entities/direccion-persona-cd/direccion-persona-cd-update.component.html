@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-direccion-persona-cd-heading" jhiTranslate="cambistaDigitalApp.direccionPersona.home.createOrEditLabel">Create or edit a Direccion Persona</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!direccionPersona.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="direccionPersona.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.direccionPersona.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="direccionPersona.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.direccionPersona.tipo" for="field_tipo">Tipo</label>
+                    <input type="text" class="form-control" name="tipo" id="field_tipo"
+                        [(ngModel)]="direccionPersona.tipo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.direccionPersona.ciudad" for="field_ciudad">Ciudad</label>
+                    <input type="text" class="form-control" name="ciudad" id="field_ciudad"
+                        [(ngModel)]="direccionPersona.ciudad" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.direccionPersona.provincia" for="field_provincia">Provincia</label>
+                    <input type="text" class="form-control" name="provincia" id="field_provincia"
+                        [(ngModel)]="direccionPersona.provincia" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.direccionPersona.pais" for="field_pais">Pais</label>
+                    <input type="text" class="form-control" name="pais" id="field_pais"
+                        [(ngModel)]="direccionPersona.pais" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.direccionPersona.persona" for="field_persona">Persona</label>
+                    <select class="form-control" id="field_persona" name="persona" [(ngModel)]="direccionPersona.persona" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="personaOption.id === direccionPersona.persona?.id ? direccionPersona.persona : personaOption" *ngFor="let personaOption of personas; trackBy: trackPersonaById">{{personaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

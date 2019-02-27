@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cuentaBancaria">
+            <h2><span jhiTranslate="cambistaDigitalApp.cuentaBancaria.detail.title">Cuenta Bancaria</span> {{cuentaBancaria.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cambistaDigitalApp.cuentaBancaria.numeroCuenta">Numero Cuenta</span></dt>
+                <dd>
+                    <span>{{cuentaBancaria.numeroCuenta}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.cuentaBancaria.banco">Banco</span></dt>
+                <dd>
+                    <div *ngIf="cuentaBancaria.banco">
+                        <a [routerLink]="['/banco-cd', cuentaBancaria.banco?.id, 'view']">{{cuentaBancaria.banco?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.cuentaBancaria.usuario">Usuario</span></dt>
+                <dd>
+                    <div *ngIf="cuentaBancaria.usuario">
+                        <a [routerLink]="['/usuario-cd', cuentaBancaria.usuario?.id, 'view']">{{cuentaBancaria.usuario?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cuenta-bancaria-cd', cuentaBancaria.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

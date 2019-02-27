@@ -1,0 +1,131 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="cambistaDigitalApp.transaccionPersona.home.title">Transaccion Personas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-transaccion-persona-cd" [routerLink]="['/transaccion-persona-cd/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="cambistaDigitalApp.transaccionPersona.home.createLabel">
+            Create new Transaccion Persona
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'cambistaDigitalApp.transaccionPersona.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="transaccionPersonas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.montoAComprar">Monto A Comprar</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.montoTotal">Monto Total</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.estado">Estado</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.fecha">Fecha</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.comentario">Comentario</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.usuario">Usuario</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.bancoOrigen">Banco Origen</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.bancoDestino">Banco Destino</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.monedaAComprar">Moneda A Comprar</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.tipoCambio">Tipo Cambio</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.depositoPersona">Deposito Persona</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.cuentaDestinoPersona">Cuenta Destino Persona</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.monedaMontoTotal">Moneda Monto Total</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.transaccionPersona.depositoCambista">Deposito Cambista</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let transaccionPersona of transaccionPersonas ;trackBy: trackId">
+                <td><a [routerLink]="['/transaccion-persona-cd', transaccionPersona.id, 'view' ]">{{transaccionPersona.id}}</a></td>
+                <td>{{transaccionPersona.montoAComprar}}</td>
+                <td>{{transaccionPersona.montoTotal}}</td>
+                <td>{{transaccionPersona.estado}}</td>
+                <td>{{transaccionPersona.fecha | date:'mediumDate'}}</td>
+                <td>{{transaccionPersona.comentario}}</td>
+                <td>
+                    <div *ngIf="transaccionPersona.usuario">
+                        <a [routerLink]="['../usuario-cd', transaccionPersona.usuario?.id, 'view' ]" >{{transaccionPersona.usuario?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transaccionPersona.bancoOrigen">
+                        <a [routerLink]="['../banco-cd', transaccionPersona.bancoOrigen?.id, 'view' ]" >{{transaccionPersona.bancoOrigen?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transaccionPersona.bancoDestino">
+                        <a [routerLink]="['../banco-cd', transaccionPersona.bancoDestino?.id, 'view' ]" >{{transaccionPersona.bancoDestino?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transaccionPersona.monedaAComprar">
+                        <a [routerLink]="['../moneda-cd', transaccionPersona.monedaAComprar?.id, 'view' ]" >{{transaccionPersona.monedaAComprar?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transaccionPersona.tipoCambio">
+                        <a [routerLink]="['../tipo-cambio-cd', transaccionPersona.tipoCambio?.id, 'view' ]" >{{transaccionPersona.tipoCambio?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transaccionPersona.depositoPersona">
+                        <a [routerLink]="['../deposito-persona-cd', transaccionPersona.depositoPersona?.id, 'view' ]" >{{transaccionPersona.depositoPersona?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transaccionPersona.cuentaDestinoPersona">
+                        <a [routerLink]="['../cuenta-bancaria-cd', transaccionPersona.cuentaDestinoPersona?.id, 'view' ]" >{{transaccionPersona.cuentaDestinoPersona?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transaccionPersona.monedaMontoTotal">
+                        <a [routerLink]="['../moneda-cd', transaccionPersona.monedaMontoTotal?.id, 'view' ]" >{{transaccionPersona.monedaMontoTotal?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transaccionPersona.depositoCambista">
+                        <a [routerLink]="['../deposito-cambista-cd', transaccionPersona.depositoCambista?.id, 'view' ]" >{{transaccionPersona.depositoCambista?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/transaccion-persona-cd', transaccionPersona.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/transaccion-persona-cd', transaccionPersona.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'transaccion-persona-cd', { outlets: { popup: transaccionPersona.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

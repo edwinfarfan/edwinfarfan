@@ -1,0 +1,24 @@
+{
+    "cambistaDigitalApp": {
+        "usuarioRol": {
+            "home": {
+                "title": "Usuario Rols",
+                "createLabel": "Crear nuevo Usuario Rol",
+                "createOrEditLabel": "Crear o editar Usuario Rol",
+                "search": "Search for Usuario Rol"
+            },
+            "created": "Un nuevo Usuario Rol ha sido creado con el identificador {{ param }}",
+            "updated": "Un Usuario Rol ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Usuario Rol ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Usuario Rol {{ id }}?"
+            },
+            "detail": {
+                "title": "Usuario Rol"
+            },
+            "usuario": "Usuario",
+            "rol": "Rol",
+            "permiso": "Permiso"
+        }
+    }
+}

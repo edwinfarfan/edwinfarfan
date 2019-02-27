@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transaccionPersona">
+            <h2><span jhiTranslate="cambistaDigitalApp.transaccionPersona.detail.title">Transaccion Persona</span> {{transaccionPersona.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.montoAComprar">Monto A Comprar</span></dt>
+                <dd>
+                    <span>{{transaccionPersona.montoAComprar}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.montoTotal">Monto Total</span></dt>
+                <dd>
+                    <span>{{transaccionPersona.montoTotal}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.estado">Estado</span></dt>
+                <dd>
+                    <span>{{transaccionPersona.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{transaccionPersona.fecha}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.comentario">Comentario</span></dt>
+                <dd>
+                    <span>{{transaccionPersona.comentario}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.usuario">Usuario</span></dt>
+                <dd>
+                    <div *ngIf="transaccionPersona.usuario">
+                        <a [routerLink]="['/usuario-cd', transaccionPersona.usuario?.id, 'view']">{{transaccionPersona.usuario?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.bancoOrigen">Banco Origen</span></dt>
+                <dd>
+                    <div *ngIf="transaccionPersona.bancoOrigen">
+                        <a [routerLink]="['/banco-cd', transaccionPersona.bancoOrigen?.id, 'view']">{{transaccionPersona.bancoOrigen?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.bancoDestino">Banco Destino</span></dt>
+                <dd>
+                    <div *ngIf="transaccionPersona.bancoDestino">
+                        <a [routerLink]="['/banco-cd', transaccionPersona.bancoDestino?.id, 'view']">{{transaccionPersona.bancoDestino?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.monedaAComprar">Moneda A Comprar</span></dt>
+                <dd>
+                    <div *ngIf="transaccionPersona.monedaAComprar">
+                        <a [routerLink]="['/moneda-cd', transaccionPersona.monedaAComprar?.id, 'view']">{{transaccionPersona.monedaAComprar?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.tipoCambio">Tipo Cambio</span></dt>
+                <dd>
+                    <div *ngIf="transaccionPersona.tipoCambio">
+                        <a [routerLink]="['/tipo-cambio-cd', transaccionPersona.tipoCambio?.id, 'view']">{{transaccionPersona.tipoCambio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.depositoPersona">Deposito Persona</span></dt>
+                <dd>
+                    <div *ngIf="transaccionPersona.depositoPersona">
+                        <a [routerLink]="['/deposito-persona-cd', transaccionPersona.depositoPersona?.id, 'view']">{{transaccionPersona.depositoPersona?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.cuentaDestinoPersona">Cuenta Destino Persona</span></dt>
+                <dd>
+                    <div *ngIf="transaccionPersona.cuentaDestinoPersona">
+                        <a [routerLink]="['/cuenta-bancaria-cd', transaccionPersona.cuentaDestinoPersona?.id, 'view']">{{transaccionPersona.cuentaDestinoPersona?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.monedaMontoTotal">Moneda Monto Total</span></dt>
+                <dd>
+                    <div *ngIf="transaccionPersona.monedaMontoTotal">
+                        <a [routerLink]="['/moneda-cd', transaccionPersona.monedaMontoTotal?.id, 'view']">{{transaccionPersona.monedaMontoTotal?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionPersona.depositoCambista">Deposito Cambista</span></dt>
+                <dd>
+                    <div *ngIf="transaccionPersona.depositoCambista">
+                        <a [routerLink]="['/deposito-cambista-cd', transaccionPersona.depositoCambista?.id, 'view']">{{transaccionPersona.depositoCambista?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaccion-persona-cd', transaccionPersona.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

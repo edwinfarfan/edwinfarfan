@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-persona-cd-heading" jhiTranslate="cambistaDigitalApp.persona.home.createOrEditLabel">Create or edit a Persona</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!persona.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="persona.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.persona.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="persona.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.persona.apellido" for="field_apellido">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" id="field_apellido"
+                        [(ngModel)]="persona.apellido" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.persona.tipoPersona" for="field_tipoPersona">Tipo Persona</label>
+                    <select class="form-control" name="tipoPersona" [(ngModel)]="persona.tipoPersona" id="field_tipoPersona" >
+                        <option value="NATURAL">{{'cambistaDigitalApp.TipoPersona.NATURAL' | translate}}</option>
+                        <option value="JURIDICA">{{'cambistaDigitalApp.TipoPersona.JURIDICA' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.persona.razonSocial" for="field_razonSocial">Razon Social</label>
+                    <input type="text" class="form-control" name="razonSocial" id="field_razonSocial"
+                        [(ngModel)]="persona.razonSocial" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.persona.numeroDocumento" for="field_numeroDocumento">Numero Documento</label>
+                    <input type="text" class="form-control" name="numeroDocumento" id="field_numeroDocumento"
+                        [(ngModel)]="persona.numeroDocumento" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.persona.correo" for="field_correo">Correo</label>
+                    <input type="text" class="form-control" name="correo" id="field_correo"
+                        [(ngModel)]="persona.correo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.persona.fechaNacimiento" for="field_fechaNacimiento">Fecha Nacimiento</label>
+                    <div class="input-group">
+                        <input id="field_fechaNacimiento" type="text" class="form-control" name="fechaNacimiento" ngbDatepicker  #fechaNacimientoDp="ngbDatepicker" [(ngModel)]="persona.fechaNacimiento"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaNacimientoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.persona.genero" for="field_genero">Genero</label>
+                    <select class="form-control" name="genero" [(ngModel)]="persona.genero" id="field_genero" >
+                        <option value="MASCULINO">{{'cambistaDigitalApp.Genero.MASCULINO' | translate}}</option>
+                        <option value="FEMENINO">{{'cambistaDigitalApp.Genero.FEMENINO' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.persona.estado" for="field_estado">Estado</label>
+                    <input type="text" class="form-control" name="estado" id="field_estado"
+                        [(ngModel)]="persona.estado" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.persona.tipoDocumento" for="field_tipoDocumento">Tipo Documento</label>
+                    <select class="form-control" id="field_tipoDocumento" name="tipoDocumento" [(ngModel)]="persona.tipoDocumento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoDocumentoOption.id === persona.tipoDocumento?.id ? persona.tipoDocumento : tipoDocumentoOption" *ngFor="let tipoDocumentoOption of tipodocumentos; trackBy: trackTipoDocumentoById">{{tipoDocumentoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

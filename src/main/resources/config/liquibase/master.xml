@@ -6,6 +6,35 @@
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190221052748_added_entity_User.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044944_added_entity_Persona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044945_added_entity_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044946_added_entity_TipoDocumento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044947_added_entity_TelefonoPersona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044948_added_entity_UsuarioRol.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044949_added_entity_Rol.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044950_added_entity_Permiso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044951_added_entity_CuentaBancaria.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044952_added_entity_DireccionPersona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044953_added_entity_Moneda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044954_added_entity_Banco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044955_added_entity_DepositoPersona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044956_added_entity_TransaccionPersona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044957_added_entity_TransaccionCambista.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044958_added_entity_DepositoCambista.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044959_added_entity_TipoCambio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227045000_added_entity_TipoCambioVariacion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190227044944_added_entity_constraints_Persona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044945_added_entity_constraints_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044947_added_entity_constraints_TelefonoPersona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044948_added_entity_constraints_UsuarioRol.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044951_added_entity_constraints_CuentaBancaria.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044952_added_entity_constraints_DireccionPersona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044955_added_entity_constraints_DepositoPersona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044956_added_entity_constraints_TransaccionPersona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044957_added_entity_constraints_TransaccionCambista.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044958_added_entity_constraints_DepositoCambista.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227044959_added_entity_constraints_TipoCambio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190227045000_added_entity_constraints_TipoCambioVariacion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

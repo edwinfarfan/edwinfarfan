@@ -1,0 +1,117 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-transaccion-persona-cd-heading" jhiTranslate="cambistaDigitalApp.transaccionPersona.home.createOrEditLabel">Create or edit a Transaccion Persona</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!transaccionPersona.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="transaccionPersona.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.montoAComprar" for="field_montoAComprar">Monto A Comprar</label>
+                    <input type="number" class="form-control" name="montoAComprar" id="field_montoAComprar"
+                        [(ngModel)]="transaccionPersona.montoAComprar" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.montoTotal" for="field_montoTotal">Monto Total</label>
+                    <input type="number" class="form-control" name="montoTotal" id="field_montoTotal"
+                        [(ngModel)]="transaccionPersona.montoTotal" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.estado" for="field_estado">Estado</label>
+                    <input type="text" class="form-control" name="estado" id="field_estado"
+                        [(ngModel)]="transaccionPersona.estado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.fecha" for="field_fecha">Fecha</label>
+                    <div class="input-group">
+                        <input id="field_fecha" type="text" class="form-control" name="fecha" ngbDatepicker  #fechaDp="ngbDatepicker" [(ngModel)]="transaccionPersona.fecha"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.comentario" for="field_comentario">Comentario</label>
+                    <input type="text" class="form-control" name="comentario" id="field_comentario"
+                        [(ngModel)]="transaccionPersona.comentario" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.usuario" for="field_usuario">Usuario</label>
+                    <select class="form-control" id="field_usuario" name="usuario" [(ngModel)]="transaccionPersona.usuario">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="usuarioOption.id === transaccionPersona.usuario?.id ? transaccionPersona.usuario : usuarioOption" *ngFor="let usuarioOption of usuarios; trackBy: trackUsuarioById">{{usuarioOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.bancoOrigen" for="field_bancoOrigen">Banco Origen</label>
+                    <select class="form-control" id="field_bancoOrigen" name="bancoOrigen" [(ngModel)]="transaccionPersona.bancoOrigen">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="bancoOption.id === transaccionPersona.bancoOrigen?.id ? transaccionPersona.bancoOrigen : bancoOption" *ngFor="let bancoOption of bancoorigens; trackBy: trackBancoById">{{bancoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.bancoDestino" for="field_bancoDestino">Banco Destino</label>
+                    <select class="form-control" id="field_bancoDestino" name="bancoDestino" [(ngModel)]="transaccionPersona.bancoDestino">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="bancoOption.id === transaccionPersona.bancoDestino?.id ? transaccionPersona.bancoDestino : bancoOption" *ngFor="let bancoOption of bancodestinos; trackBy: trackBancoById">{{bancoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.monedaAComprar" for="field_monedaAComprar">Moneda A Comprar</label>
+                    <select class="form-control" id="field_monedaAComprar" name="monedaAComprar" [(ngModel)]="transaccionPersona.monedaAComprar">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="monedaOption.id === transaccionPersona.monedaAComprar?.id ? transaccionPersona.monedaAComprar : monedaOption" *ngFor="let monedaOption of monedaacomprars; trackBy: trackMonedaById">{{monedaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.tipoCambio" for="field_tipoCambio">Tipo Cambio</label>
+                    <select class="form-control" id="field_tipoCambio" name="tipoCambio" [(ngModel)]="transaccionPersona.tipoCambio">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoCambioOption.id === transaccionPersona.tipoCambio?.id ? transaccionPersona.tipoCambio : tipoCambioOption" *ngFor="let tipoCambioOption of tipocambios; trackBy: trackTipoCambioById">{{tipoCambioOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.depositoPersona" for="field_depositoPersona">Deposito Persona</label>
+                    <select class="form-control" id="field_depositoPersona" name="depositoPersona" [(ngModel)]="transaccionPersona.depositoPersona">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="depositoPersonaOption.id === transaccionPersona.depositoPersona?.id ? transaccionPersona.depositoPersona : depositoPersonaOption" *ngFor="let depositoPersonaOption of depositopersonas; trackBy: trackDepositoPersonaById">{{depositoPersonaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.cuentaDestinoPersona" for="field_cuentaDestinoPersona">Cuenta Destino Persona</label>
+                    <select class="form-control" id="field_cuentaDestinoPersona" name="cuentaDestinoPersona" [(ngModel)]="transaccionPersona.cuentaDestinoPersona">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cuentaBancariaOption.id === transaccionPersona.cuentaDestinoPersona?.id ? transaccionPersona.cuentaDestinoPersona : cuentaBancariaOption" *ngFor="let cuentaBancariaOption of cuentadestinopersonas; trackBy: trackCuentaBancariaById">{{cuentaBancariaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.monedaMontoTotal" for="field_monedaMontoTotal">Moneda Monto Total</label>
+                    <select class="form-control" id="field_monedaMontoTotal" name="monedaMontoTotal" [(ngModel)]="transaccionPersona.monedaMontoTotal">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="monedaOption.id === transaccionPersona.monedaMontoTotal?.id ? transaccionPersona.monedaMontoTotal : monedaOption" *ngFor="let monedaOption of monedamontototals; trackBy: trackMonedaById">{{monedaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.transaccionPersona.depositoCambista" for="field_depositoCambista">Deposito Cambista</label>
+                    <select class="form-control" id="field_depositoCambista" name="depositoCambista" [(ngModel)]="transaccionPersona.depositoCambista">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="depositoCambistaOption.id === transaccionPersona.depositoCambista?.id ? transaccionPersona.depositoCambista : depositoCambistaOption" *ngFor="let depositoCambistaOption of depositocambistas; trackBy: trackDepositoCambistaById">{{depositoCambistaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="cambistaDigitalApp.depositoPersona.home.title">Deposito Personas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-deposito-persona-cd" [routerLink]="['/deposito-persona-cd/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="cambistaDigitalApp.depositoPersona.home.createLabel">
+            Create new Deposito Persona
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'cambistaDigitalApp.depositoPersona.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="depositoPersonas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.depositoPersona.numeroDeposito">Numero Deposito</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.depositoPersona.monto">Monto</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.depositoPersona.constanciaAdjunto">Constancia Adjunto</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.depositoPersona.fecha">Fecha</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.depositoPersona.tipoDeposito">Tipo Deposito</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.depositoPersona.estado">Estado</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.depositoPersona.usuario">Usuario</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.depositoPersona.banco">Banco</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.depositoPersona.moneda">Moneda</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let depositoPersona of depositoPersonas ;trackBy: trackId">
+                <td><a [routerLink]="['/deposito-persona-cd', depositoPersona.id, 'view' ]">{{depositoPersona.id}}</a></td>
+                <td>{{depositoPersona.numeroDeposito}}</td>
+                <td>{{depositoPersona.monto}}</td>
+                <td>
+                    <a *ngIf="depositoPersona.constanciaAdjunto" (click)="openFile(depositoPersona.constanciaAdjuntoContentType, depositoPersona.constanciaAdjunto)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="depositoPersona.constanciaAdjunto">{{depositoPersona.constanciaAdjuntoContentType}}, {{byteSize(depositoPersona.constanciaAdjunto)}}</span>
+                </td>
+                <td>{{depositoPersona.fecha | date:'mediumDate'}}</td>
+                <td jhiTranslate="{{'cambistaDigitalApp.MedioDePago.' + depositoPersona.tipoDeposito}}">{{depositoPersona.tipoDeposito}}</td>
+                <td>{{depositoPersona.estado}}</td>
+                <td>
+                    <div *ngIf="depositoPersona.usuario">
+                        <a [routerLink]="['../usuario-cd', depositoPersona.usuario?.id, 'view' ]" >{{depositoPersona.usuario?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="depositoPersona.banco">
+                        <a [routerLink]="['../banco-cd', depositoPersona.banco?.id, 'view' ]" >{{depositoPersona.banco?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="depositoPersona.moneda">
+                        <a [routerLink]="['../moneda-cd', depositoPersona.moneda?.id, 'view' ]" >{{depositoPersona.moneda?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/deposito-persona-cd', depositoPersona.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/deposito-persona-cd', depositoPersona.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'deposito-persona-cd', { outlets: { popup: depositoPersona.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="depositoPersona">
+            <h2><span jhiTranslate="cambistaDigitalApp.depositoPersona.detail.title">Deposito Persona</span> {{depositoPersona.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoPersona.numeroDeposito">Numero Deposito</span></dt>
+                <dd>
+                    <span>{{depositoPersona.numeroDeposito}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoPersona.monto">Monto</span></dt>
+                <dd>
+                    <span>{{depositoPersona.monto}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoPersona.constanciaAdjunto">Constancia Adjunto</span></dt>
+                <dd>
+                    <div *ngIf="depositoPersona.constanciaAdjunto">
+                        <a (click)="openFile(depositoPersona.constanciaAdjuntoContentType, depositoPersona.constanciaAdjunto)" jhiTranslate="entity.action.open">open</a>
+                        {{depositoPersona.constanciaAdjuntoContentType}}, {{byteSize(depositoPersona.constanciaAdjunto)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoPersona.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{depositoPersona.fecha}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoPersona.tipoDeposito">Tipo Deposito</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'cambistaDigitalApp.MedioDePago.' + depositoPersona.tipoDeposito}}">{{depositoPersona.tipoDeposito}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoPersona.estado">Estado</span></dt>
+                <dd>
+                    <span>{{depositoPersona.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoPersona.usuario">Usuario</span></dt>
+                <dd>
+                    <div *ngIf="depositoPersona.usuario">
+                        <a [routerLink]="['/usuario-cd', depositoPersona.usuario?.id, 'view']">{{depositoPersona.usuario?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoPersona.banco">Banco</span></dt>
+                <dd>
+                    <div *ngIf="depositoPersona.banco">
+                        <a [routerLink]="['/banco-cd', depositoPersona.banco?.id, 'view']">{{depositoPersona.banco?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoPersona.moneda">Moneda</span></dt>
+                <dd>
+                    <div *ngIf="depositoPersona.moneda">
+                        <a [routerLink]="['/moneda-cd', depositoPersona.moneda?.id, 'view']">{{depositoPersona.moneda?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/deposito-persona-cd', depositoPersona.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

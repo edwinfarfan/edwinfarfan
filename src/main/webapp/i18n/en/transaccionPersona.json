@@ -1,0 +1,35 @@
+{
+    "cambistaDigitalApp": {
+        "transaccionPersona": {
+            "home": {
+                "title": "Transaccion Personas",
+                "createLabel": "Create a new Transaccion Persona",
+                "createOrEditLabel": "Create or edit a Transaccion Persona",
+                "search": "Search for Transaccion Persona"
+            },
+            "created": "A new Transaccion Persona is created with identifier {{ param }}",
+            "updated": "A Transaccion Persona is updated with identifier {{ param }}",
+            "deleted": "A Transaccion Persona is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Transaccion Persona {{ id }}?"
+            },
+            "detail": {
+                "title": "Transaccion Persona"
+            },
+            "montoAComprar": "Monto A Comprar",
+            "montoTotal": "Monto Total",
+            "estado": "Estado",
+            "fecha": "Fecha",
+            "comentario": "Comentario",
+            "usuario": "Usuario",
+            "bancoOrigen": "Banco Origen",
+            "bancoDestino": "Banco Destino",
+            "monedaAComprar": "Moneda A Comprar",
+            "tipoCambio": "Tipo Cambio",
+            "depositoPersona": "Deposito Persona",
+            "cuentaDestinoPersona": "Cuenta Destino Persona",
+            "monedaMontoTotal": "Moneda Monto Total",
+            "depositoCambista": "Deposito Cambista"
+        }
+    }
+}

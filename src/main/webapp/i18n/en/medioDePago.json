@@ -1,0 +1,13 @@
+{
+    "cambistaDigitalApp": {
+        "MedioDePago": {
+            "null": "",
+            "TRANSFERENCIAONLINE": "TRANSFERENCIAONLINE",
+            "FISICO": "FISICO",
+            "PAYPAL": "PAYPAL",
+            "TARJETA": "TARJETA",
+            "CHEQUE": "CHEQUE",
+            "OTRO": "OTRO"
+        }
+    }
+}

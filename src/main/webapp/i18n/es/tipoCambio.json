@@ -1,0 +1,26 @@
+{
+    "cambistaDigitalApp": {
+        "tipoCambio": {
+            "home": {
+                "title": "Tipo Cambios",
+                "createLabel": "Crear nuevo Tipo Cambio",
+                "createOrEditLabel": "Crear o editar Tipo Cambio",
+                "search": "Search for Tipo Cambio"
+            },
+            "created": "Un nuevo Tipo Cambio ha sido creado con el identificador {{ param }}",
+            "updated": "Un Tipo Cambio ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Tipo Cambio ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Tipo Cambio {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo Cambio"
+            },
+            "fecha": "Fecha",
+            "tipoOperacion": "Tipo Operacion",
+            "valor": "Valor",
+            "estado": "Estado",
+            "moneda": "Moneda"
+        }
+    }
+}

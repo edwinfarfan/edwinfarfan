@@ -1,0 +1,26 @@
+{
+    "cambistaDigitalApp": {
+        "transaccionCambista": {
+            "home": {
+                "title": "Transaccion Cambistas",
+                "createLabel": "Create a new Transaccion Cambista",
+                "createOrEditLabel": "Create or edit a Transaccion Cambista",
+                "search": "Search for Transaccion Cambista"
+            },
+            "created": "A new Transaccion Cambista is created with identifier {{ param }}",
+            "updated": "A Transaccion Cambista is updated with identifier {{ param }}",
+            "deleted": "A Transaccion Cambista is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Transaccion Cambista {{ id }}?"
+            },
+            "detail": {
+                "title": "Transaccion Cambista"
+            },
+            "impuesto": "Impuesto",
+            "estado": "Estado",
+            "fecha": "Fecha",
+            "transaccionPersona": "Transaccion Persona",
+            "idDepositoCambista": "Id Deposito Cambista"
+        }
+    }
+}

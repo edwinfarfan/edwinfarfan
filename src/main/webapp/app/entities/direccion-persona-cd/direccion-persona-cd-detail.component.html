@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="direccionPersona">
+            <h2><span jhiTranslate="cambistaDigitalApp.direccionPersona.detail.title">Direccion Persona</span> {{direccionPersona.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cambistaDigitalApp.direccionPersona.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{direccionPersona.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.direccionPersona.tipo">Tipo</span></dt>
+                <dd>
+                    <span>{{direccionPersona.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.direccionPersona.ciudad">Ciudad</span></dt>
+                <dd>
+                    <span>{{direccionPersona.ciudad}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.direccionPersona.provincia">Provincia</span></dt>
+                <dd>
+                    <span>{{direccionPersona.provincia}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.direccionPersona.pais">Pais</span></dt>
+                <dd>
+                    <span>{{direccionPersona.pais}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.direccionPersona.persona">Persona</span></dt>
+                <dd>
+                    <div *ngIf="direccionPersona.persona">
+                        <a [routerLink]="['/persona-cd', direccionPersona.persona?.id, 'view']">{{direccionPersona.persona?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/direccion-persona-cd', direccionPersona.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

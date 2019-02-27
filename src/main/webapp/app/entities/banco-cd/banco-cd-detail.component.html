@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="banco">
+            <h2><span jhiTranslate="cambistaDigitalApp.banco.detail.title">Banco</span> {{banco.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cambistaDigitalApp.banco.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{banco.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.banco.nombreCompleto">Nombre Completo</span></dt>
+                <dd>
+                    <span>{{banco.nombreCompleto}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.banco.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{banco.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.banco.logo">Logo</span></dt>
+                <dd>
+                    <span>{{banco.logo}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.banco.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{banco.direccion}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/banco-cd', banco.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+{
+    "cambistaDigitalApp": {
+        "TipoOperacion": {
+            "null": "",
+            "COMPRA": "COMPRA",
+            "VENTA": "VENTA"
+        }
+    }
+}

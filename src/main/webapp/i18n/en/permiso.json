@@ -1,0 +1,23 @@
+{
+    "cambistaDigitalApp": {
+        "permiso": {
+            "home": {
+                "title": "Permisos",
+                "createLabel": "Create a new Permiso",
+                "createOrEditLabel": "Create or edit a Permiso",
+                "search": "Search for Permiso"
+            },
+            "created": "A new Permiso is created with identifier {{ param }}",
+            "updated": "A Permiso is updated with identifier {{ param }}",
+            "deleted": "A Permiso is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Permiso {{ id }}?"
+            },
+            "detail": {
+                "title": "Permiso"
+            },
+            "nombre": "Nombre",
+            "descripcion": "Descripcion"
+        }
+    }
+}

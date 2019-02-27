@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transaccionCambista">
+            <h2><span jhiTranslate="cambistaDigitalApp.transaccionCambista.detail.title">Transaccion Cambista</span> {{transaccionCambista.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionCambista.impuesto">Impuesto</span></dt>
+                <dd>
+                    <span>{{transaccionCambista.impuesto}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionCambista.estado">Estado</span></dt>
+                <dd>
+                    <span>{{transaccionCambista.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionCambista.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{transaccionCambista.fecha}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionCambista.transaccionPersona">Transaccion Persona</span></dt>
+                <dd>
+                    <div *ngIf="transaccionCambista.transaccionPersona">
+                        <a [routerLink]="['/transaccion-persona-cd', transaccionCambista.transaccionPersona?.id, 'view']">{{transaccionCambista.transaccionPersona?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.transaccionCambista.idDepositoCambista">Id Deposito Cambista</span></dt>
+                <dd>
+                    <div *ngIf="transaccionCambista.idDepositoCambista">
+                        <a [routerLink]="['/deposito-cambista-cd', transaccionCambista.idDepositoCambista?.id, 'view']">{{transaccionCambista.idDepositoCambista?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaccion-cambista-cd', transaccionCambista.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

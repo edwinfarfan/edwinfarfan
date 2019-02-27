@@ -1,0 +1,9 @@
+{
+    "cambistaDigitalApp": {
+        "Genero": {
+            "null": "",
+            "MASCULINO": "MASCULINO",
+            "FEMENINO": "FEMENINO"
+        }
+    }
+}

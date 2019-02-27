@@ -1,0 +1,21 @@
+{
+    "cambistaDigitalApp": {
+        "user": {
+            "home": {
+                "title": "Users",
+                "createLabel": "Crear nuevo User",
+                "createOrEditLabel": "Crear o editar User",
+                "search": "Search for User"
+            },
+            "created": "Un nuevo User ha sido creado con el identificador {{ param }}",
+            "updated": "Un User ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un User ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar User {{ id }}?"
+            },
+            "detail": {
+                "title": "User"
+            }
+        }
+    }
+}

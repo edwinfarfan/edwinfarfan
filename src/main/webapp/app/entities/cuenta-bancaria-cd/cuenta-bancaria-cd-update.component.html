@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-cuenta-bancaria-cd-heading" jhiTranslate="cambistaDigitalApp.cuentaBancaria.home.createOrEditLabel">Create or edit a Cuenta Bancaria</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!cuentaBancaria.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="cuentaBancaria.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.cuentaBancaria.numeroCuenta" for="field_numeroCuenta">Numero Cuenta</label>
+                    <input type="text" class="form-control" name="numeroCuenta" id="field_numeroCuenta"
+                        [(ngModel)]="cuentaBancaria.numeroCuenta" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.cuentaBancaria.banco" for="field_banco">Banco</label>
+                    <select class="form-control" id="field_banco" name="banco" [(ngModel)]="cuentaBancaria.banco">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="bancoOption.id === cuentaBancaria.banco?.id ? cuentaBancaria.banco : bancoOption" *ngFor="let bancoOption of bancos; trackBy: trackBancoById">{{bancoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.cuentaBancaria.usuario" for="field_usuario">Usuario</label>
+                    <select class="form-control" id="field_usuario" name="usuario" [(ngModel)]="cuentaBancaria.usuario">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="usuarioOption.id === cuentaBancaria.usuario?.id ? cuentaBancaria.usuario : usuarioOption" *ngFor="let usuarioOption of usuarios; trackBy: trackUsuarioById">{{usuarioOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

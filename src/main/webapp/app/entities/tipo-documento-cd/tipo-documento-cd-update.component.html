@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-tipo-documento-cd-heading" jhiTranslate="cambistaDigitalApp.tipoDocumento.home.createOrEditLabel">Create or edit a Tipo Documento</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!tipoDocumento.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="tipoDocumento.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.tipoDocumento.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="tipoDocumento.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.tipoDocumento.nombreCompleto" for="field_nombreCompleto">Nombre Completo</label>
+                    <input type="text" class="form-control" name="nombreCompleto" id="field_nombreCompleto"
+                        [(ngModel)]="tipoDocumento.nombreCompleto" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.tipoDocumento.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                        [(ngModel)]="tipoDocumento.descripcion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.tipoDocumento.estado" for="field_estado">Estado</label>
+                    <input type="text" class="form-control" name="estado" id="field_estado"
+                        [(ngModel)]="tipoDocumento.estado" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

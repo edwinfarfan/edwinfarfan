@@ -1,0 +1,29 @@
+{
+    "cambistaDigitalApp": {
+        "depositoCambista": {
+            "home": {
+                "title": "Deposito Cambistas",
+                "createLabel": "Crear nuevo Deposito Cambista",
+                "createOrEditLabel": "Crear o editar Deposito Cambista",
+                "search": "Search for Deposito Cambista"
+            },
+            "created": "Un nuevo Deposito Cambista ha sido creado con el identificador {{ param }}",
+            "updated": "Un Deposito Cambista ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Deposito Cambista ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Deposito Cambista {{ id }}?"
+            },
+            "detail": {
+                "title": "Deposito Cambista"
+            },
+            "numeroDeposito": "Numero Deposito",
+            "monto": "Monto",
+            "constanciaAdjunto": "Constancia Adjunto",
+            "fecha": "Fecha",
+            "estado": "Estado",
+            "usuario": "Usuario",
+            "banco": "Banco",
+            "moneda": "Moneda"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="usuario">
+            <h2><span jhiTranslate="cambistaDigitalApp.usuario.detail.title">Usuario</span> {{usuario.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cambistaDigitalApp.usuario.usuario">Usuario</span></dt>
+                <dd>
+                    <span>{{usuario.usuario}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.usuario.password">Password</span></dt>
+                <dd>
+                    <span>{{usuario.password}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.usuario.preguntaSecreta">Pregunta Secreta</span></dt>
+                <dd>
+                    <span>{{usuario.preguntaSecreta}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.usuario.estado">Estado</span></dt>
+                <dd>
+                    <span>{{usuario.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.usuario.tiempoSesion">Tiempo Sesion</span></dt>
+                <dd>
+                    <span>{{usuario.tiempoSesion}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.usuario.persona">Persona</span></dt>
+                <dd>
+                    <div *ngIf="usuario.persona">
+                        <a [routerLink]="['/persona-cd', usuario.persona?.id, 'view']">{{usuario.persona?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/usuario-cd', usuario.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

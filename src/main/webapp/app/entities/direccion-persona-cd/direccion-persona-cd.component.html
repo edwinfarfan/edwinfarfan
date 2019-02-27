@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="cambistaDigitalApp.direccionPersona.home.title">Direccion Personas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-direccion-persona-cd" [routerLink]="['/direccion-persona-cd/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="cambistaDigitalApp.direccionPersona.home.createLabel">
+            Create new Direccion Persona
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'cambistaDigitalApp.direccionPersona.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="direccionPersonas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.direccionPersona.nombre">Nombre</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.direccionPersona.tipo">Tipo</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.direccionPersona.ciudad">Ciudad</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.direccionPersona.provincia">Provincia</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.direccionPersona.pais">Pais</span></th>
+            <th><span jhiTranslate="cambistaDigitalApp.direccionPersona.persona">Persona</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let direccionPersona of direccionPersonas ;trackBy: trackId">
+                <td><a [routerLink]="['/direccion-persona-cd', direccionPersona.id, 'view' ]">{{direccionPersona.id}}</a></td>
+                <td>{{direccionPersona.nombre}}</td>
+                <td>{{direccionPersona.tipo}}</td>
+                <td>{{direccionPersona.ciudad}}</td>
+                <td>{{direccionPersona.provincia}}</td>
+                <td>{{direccionPersona.pais}}</td>
+                <td>
+                    <div *ngIf="direccionPersona.persona">
+                        <a [routerLink]="['../persona-cd', direccionPersona.persona?.id, 'view' ]" >{{direccionPersona.persona?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/direccion-persona-cd', direccionPersona.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/direccion-persona-cd', direccionPersona.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'direccion-persona-cd', { outlets: { popup: direccionPersona.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

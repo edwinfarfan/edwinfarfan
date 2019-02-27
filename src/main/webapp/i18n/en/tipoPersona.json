@@ -1,0 +1,9 @@
+{
+    "cambistaDigitalApp": {
+        "TipoPersona": {
+            "null": "",
+            "NATURAL": "NATURAL",
+            "JURIDICA": "JURIDICA"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "cambistaDigitalApp": {
+        "moneda": {
+            "home": {
+                "title": "Monedas",
+                "createLabel": "Crear nuevo Moneda",
+                "createOrEditLabel": "Crear o editar Moneda",
+                "search": "Search for Moneda"
+            },
+            "created": "Un nuevo Moneda ha sido creado con el identificador {{ param }}",
+            "updated": "Un Moneda ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Moneda ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Moneda {{ id }}?"
+            },
+            "detail": {
+                "title": "Moneda"
+            },
+            "nombre": "Nombre",
+            "tipo": "Tipo",
+            "simbolo": "Simbolo",
+            "descripcion": "Descripcion"
+        }
+    }
+}

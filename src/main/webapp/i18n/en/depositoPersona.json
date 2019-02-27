@@ -1,0 +1,30 @@
+{
+    "cambistaDigitalApp": {
+        "depositoPersona": {
+            "home": {
+                "title": "Deposito Personas",
+                "createLabel": "Create a new Deposito Persona",
+                "createOrEditLabel": "Create or edit a Deposito Persona",
+                "search": "Search for Deposito Persona"
+            },
+            "created": "A new Deposito Persona is created with identifier {{ param }}",
+            "updated": "A Deposito Persona is updated with identifier {{ param }}",
+            "deleted": "A Deposito Persona is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Deposito Persona {{ id }}?"
+            },
+            "detail": {
+                "title": "Deposito Persona"
+            },
+            "numeroDeposito": "Numero Deposito",
+            "monto": "Monto",
+            "constanciaAdjunto": "Constancia Adjunto",
+            "fecha": "Fecha",
+            "tipoDeposito": "Tipo Deposito",
+            "estado": "Estado",
+            "usuario": "Usuario",
+            "banco": "Banco",
+            "moneda": "Moneda"
+        }
+    }
+}

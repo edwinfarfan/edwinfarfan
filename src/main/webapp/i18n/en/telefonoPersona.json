@@ -1,0 +1,26 @@
+{
+    "cambistaDigitalApp": {
+        "telefonoPersona": {
+            "home": {
+                "title": "Telefono Personas",
+                "createLabel": "Create a new Telefono Persona",
+                "createOrEditLabel": "Create or edit a Telefono Persona",
+                "search": "Search for Telefono Persona"
+            },
+            "created": "A new Telefono Persona is created with identifier {{ param }}",
+            "updated": "A Telefono Persona is updated with identifier {{ param }}",
+            "deleted": "A Telefono Persona is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Telefono Persona {{ id }}?"
+            },
+            "detail": {
+                "title": "Telefono Persona"
+            },
+            "nombre": "Nombre",
+            "tipo": "Tipo",
+            "descripcion": "Descripcion",
+            "numero": "Numero",
+            "persona": "Persona"
+        }
+    }
+}

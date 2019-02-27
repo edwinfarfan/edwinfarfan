@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="persona">
+            <h2><span jhiTranslate="cambistaDigitalApp.persona.detail.title">Persona</span> {{persona.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cambistaDigitalApp.persona.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{persona.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.persona.apellido">Apellido</span></dt>
+                <dd>
+                    <span>{{persona.apellido}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.persona.tipoPersona">Tipo Persona</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'cambistaDigitalApp.TipoPersona.' + persona.tipoPersona}}">{{persona.tipoPersona}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.persona.razonSocial">Razon Social</span></dt>
+                <dd>
+                    <span>{{persona.razonSocial}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.persona.numeroDocumento">Numero Documento</span></dt>
+                <dd>
+                    <span>{{persona.numeroDocumento}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.persona.correo">Correo</span></dt>
+                <dd>
+                    <span>{{persona.correo}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.persona.fechaNacimiento">Fecha Nacimiento</span></dt>
+                <dd>
+                    <span>{{persona.fechaNacimiento}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.persona.genero">Genero</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'cambistaDigitalApp.Genero.' + persona.genero}}">{{persona.genero}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.persona.estado">Estado</span></dt>
+                <dd>
+                    <span>{{persona.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.persona.tipoDocumento">Tipo Documento</span></dt>
+                <dd>
+                    <div *ngIf="persona.tipoDocumento">
+                        <a [routerLink]="['/tipo-documento-cd', persona.tipoDocumento?.id, 'view']">{{persona.tipoDocumento?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/persona-cd', persona.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

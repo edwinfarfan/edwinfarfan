@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="moneda">
+            <h2><span jhiTranslate="cambistaDigitalApp.moneda.detail.title">Moneda</span> {{moneda.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cambistaDigitalApp.moneda.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{moneda.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.moneda.tipo">Tipo</span></dt>
+                <dd>
+                    <span>{{moneda.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.moneda.simbolo">Simbolo</span></dt>
+                <dd>
+                    <span>{{moneda.simbolo}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.moneda.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{moneda.descripcion}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/moneda-cd', moneda.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

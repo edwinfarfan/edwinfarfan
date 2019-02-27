@@ -1,0 +1,24 @@
+{
+    "cambistaDigitalApp": {
+        "cuentaBancaria": {
+            "home": {
+                "title": "Cuenta Bancarias",
+                "createLabel": "Crear nuevo Cuenta Bancaria",
+                "createOrEditLabel": "Crear o editar Cuenta Bancaria",
+                "search": "Search for Cuenta Bancaria"
+            },
+            "created": "Un nuevo Cuenta Bancaria ha sido creado con el identificador {{ param }}",
+            "updated": "Un Cuenta Bancaria ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Cuenta Bancaria ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Cuenta Bancaria {{ id }}?"
+            },
+            "detail": {
+                "title": "Cuenta Bancaria"
+            },
+            "numeroCuenta": "Numero Cuenta",
+            "banco": "Banco",
+            "usuario": "Usuario"
+        }
+    }
+}

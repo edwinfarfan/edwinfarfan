@@ -1,0 +1,25 @@
+{
+    "cambistaDigitalApp": {
+        "tipoCambioVariacion": {
+            "home": {
+                "title": "Tipo Cambio Variacions",
+                "createLabel": "Create a new Tipo Cambio Variacion",
+                "createOrEditLabel": "Create or edit a Tipo Cambio Variacion",
+                "search": "Search for Tipo Cambio Variacion"
+            },
+            "created": "A new Tipo Cambio Variacion is created with identifier {{ param }}",
+            "updated": "A Tipo Cambio Variacion is updated with identifier {{ param }}",
+            "deleted": "A Tipo Cambio Variacion is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipo Cambio Variacion {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo Cambio Variacion"
+            },
+            "variacionMonto": "Variacion Monto",
+            "variacionPorcentaje": "Variacion Porcentaje",
+            "estado": "Estado",
+            "tipoCambio": "Tipo Cambio"
+        }
+    }
+}

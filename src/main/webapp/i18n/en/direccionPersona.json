@@ -1,0 +1,27 @@
+{
+    "cambistaDigitalApp": {
+        "direccionPersona": {
+            "home": {
+                "title": "Direccion Personas",
+                "createLabel": "Create a new Direccion Persona",
+                "createOrEditLabel": "Create or edit a Direccion Persona",
+                "search": "Search for Direccion Persona"
+            },
+            "created": "A new Direccion Persona is created with identifier {{ param }}",
+            "updated": "A Direccion Persona is updated with identifier {{ param }}",
+            "deleted": "A Direccion Persona is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Direccion Persona {{ id }}?"
+            },
+            "detail": {
+                "title": "Direccion Persona"
+            },
+            "nombre": "Nombre",
+            "tipo": "Tipo",
+            "ciudad": "Ciudad",
+            "provincia": "Provincia",
+            "pais": "Pais",
+            "persona": "Persona"
+        }
+    }
+}

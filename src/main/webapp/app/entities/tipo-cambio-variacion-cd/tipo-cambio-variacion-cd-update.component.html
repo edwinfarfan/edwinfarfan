@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-tipo-cambio-variacion-cd-heading" jhiTranslate="cambistaDigitalApp.tipoCambioVariacion.home.createOrEditLabel">Create or edit a Tipo Cambio Variacion</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!tipoCambioVariacion.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="tipoCambioVariacion.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.tipoCambioVariacion.variacionMonto" for="field_variacionMonto">Variacion Monto</label>
+                    <input type="number" class="form-control" name="variacionMonto" id="field_variacionMonto"
+                        [(ngModel)]="tipoCambioVariacion.variacionMonto" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.tipoCambioVariacion.variacionPorcentaje" for="field_variacionPorcentaje">Variacion Porcentaje</label>
+                    <input type="number" class="form-control" name="variacionPorcentaje" id="field_variacionPorcentaje"
+                        [(ngModel)]="tipoCambioVariacion.variacionPorcentaje" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.tipoCambioVariacion.estado" for="field_estado">Estado</label>
+                    <input type="text" class="form-control" name="estado" id="field_estado"
+                        [(ngModel)]="tipoCambioVariacion.estado" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cambistaDigitalApp.tipoCambioVariacion.tipoCambio" for="field_tipoCambio">Tipo Cambio</label>
+                    <select class="form-control" id="field_tipoCambio" name="tipoCambio" [(ngModel)]="tipoCambioVariacion.tipoCambio">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoCambioOption.id === tipoCambioVariacion.tipoCambio?.id ? tipoCambioVariacion.tipoCambio : tipoCambioOption" *ngFor="let tipoCambioOption of tipocambios; trackBy: trackTipoCambioById">{{tipoCambioOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

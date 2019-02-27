@@ -1,0 +1,33 @@
+{
+    "cambistaDigitalApp": {
+        "persona": {
+            "home": {
+                "title": "Personas",
+                "createLabel": "Create a new Persona",
+                "createOrEditLabel": "Create or edit a Persona",
+                "search": "Search for Persona"
+            },
+            "created": "A new Persona is created with identifier {{ param }}",
+            "updated": "A Persona is updated with identifier {{ param }}",
+            "deleted": "A Persona is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Persona {{ id }}?"
+            },
+            "detail": {
+                "title": "Persona"
+            },
+            "nombre": "Nombre",
+            "apellido": "Apellido",
+            "tipoPersona": "Tipo Persona",
+            "razonSocial": "Razon Social",
+            "numeroDocumento": "Numero Documento",
+            "correo": "Correo",
+            "fechaNacimiento": "Fecha Nacimiento",
+            "genero": "Genero",
+            "estado": "Estado",
+            "tipoDocumento": "Tipo Documento",
+            "direccion": "Direccion",
+            "telefonos": "Telefonos"
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="depositoCambista">
+            <h2><span jhiTranslate="cambistaDigitalApp.depositoCambista.detail.title">Deposito Cambista</span> {{depositoCambista.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoCambista.numeroDeposito">Numero Deposito</span></dt>
+                <dd>
+                    <span>{{depositoCambista.numeroDeposito}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoCambista.monto">Monto</span></dt>
+                <dd>
+                    <span>{{depositoCambista.monto}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoCambista.constanciaAdjunto">Constancia Adjunto</span></dt>
+                <dd>
+                    <div *ngIf="depositoCambista.constanciaAdjunto">
+                        <a (click)="openFile(depositoCambista.constanciaAdjuntoContentType, depositoCambista.constanciaAdjunto)" jhiTranslate="entity.action.open">open</a>
+                        {{depositoCambista.constanciaAdjuntoContentType}}, {{byteSize(depositoCambista.constanciaAdjunto)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoCambista.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{depositoCambista.fecha}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoCambista.estado">Estado</span></dt>
+                <dd>
+                    <span>{{depositoCambista.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoCambista.usuario">Usuario</span></dt>
+                <dd>
+                    <div *ngIf="depositoCambista.usuario">
+                        <a [routerLink]="['/usuario-cd', depositoCambista.usuario?.id, 'view']">{{depositoCambista.usuario?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoCambista.banco">Banco</span></dt>
+                <dd>
+                    <div *ngIf="depositoCambista.banco">
+                        <a [routerLink]="['/banco-cd', depositoCambista.banco?.id, 'view']">{{depositoCambista.banco?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cambistaDigitalApp.depositoCambista.moneda">Moneda</span></dt>
+                <dd>
+                    <div *ngIf="depositoCambista.moneda">
+                        <a [routerLink]="['/moneda-cd', depositoCambista.moneda?.id, 'view']">{{depositoCambista.moneda?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/deposito-cambista-cd', depositoCambista.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

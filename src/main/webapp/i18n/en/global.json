@@ -8,6 +8,23 @@
             "entities": {
                 "main": "Entities",
                 "user": "User",
+                "personaCd": "Persona",
+                "usuarioCd": "Usuario",
+                "tipoDocumentoCd": "Tipo Documento",
+                "telefonoPersonaCd": "Telefono Persona",
+                "usuarioRolCd": "Usuario Rol",
+                "rolCd": "Rol",
+                "permisoCd": "Permiso",
+                "cuentaBancariaCd": "Cuenta Bancaria",
+                "direccionPersonaCd": "Direccion Persona",
+                "monedaCd": "Moneda",
+                "bancoCd": "Banco",
+                "depositoPersonaCd": "Deposito Persona",
+                "transaccionPersonaCd": "Transaccion Persona",
+                "transaccionCambistaCd": "Transaccion Cambista",
+                "depositoCambistaCd": "Deposito Cambista",
+                "tipoCambioCd": "Tipo Cambio",
+                "tipoCambioVariacionCd": "Tipo Cambio Variacion",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
